@@ -2,7 +2,7 @@ from interface import userInterfaceController
 ui = userInterfaceController()
 
 from character import character
-from weapon import weapon
+from combat import weapon
 
 def openingSequence():
     #ui.output("""
@@ -16,15 +16,16 @@ def openingSequence():
     #"I'll consider your request," she spoke slowly, "When three distinct conditions are met. Remind me of your name,
     #traveller?"\n
     #""")
-    name = str(input("Enter your name:"))
+    name = str(input("Enter your name: "))
 
-    ui.output(name + " ventures forth. Shadows jump forth before you. ")
-    
+    ui.output(name.capitalize() + " ventures forth. Shadows jump forth before you. ")
+ 
     enemies = []
     for i in range(2):
         enemies.append(character(50,5))
     
     ui.displayEnemies(enemies)
+    pee =weapon("Sharp Knife",20)
     sharpKnife = weapon("Sharp Knife",20)
     club = weapon("Club",30)
 
@@ -33,4 +34,4 @@ def openingSequence():
         ui.output("You ran away.")
     elif response == "fight":
         ui.output("You chose to fight the enemies. ")
-        ui.getWeapon((sharpKnife,club))
+        weapon = ui.getWeapon((sharpKnife,club))

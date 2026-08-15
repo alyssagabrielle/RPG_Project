@@ -30,9 +30,10 @@ class userInterfaceController:
                 print(str(i+1) + ". " + options[i].name + "\nDamage: " + str(options[i].attackDamage) + "\n")
 
             text = text[:-2] + ".\n"
-            weapon = str(input("\nWhat will you choose? "))
-            if weapon in options:
-                return weapon
+            weapon = input("\nWhat will you choose? ")
+            if weapon.isdigit() == True and 0 < int(weapon) <= len(options):
+                print("You chose the " + weapon + ".")
+                return options[i]
             else:
                 pass
 
