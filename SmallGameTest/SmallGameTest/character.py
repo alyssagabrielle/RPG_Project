@@ -1,11 +1,15 @@
 class character(object):
-    def __init__(self,health,attackDamage):
+    def __init__(self,health,name):
         self.health = health
-        self.attackDamage = attackDamage
+        self.name = name
+        self.equippedWeapon = None
 
     def takeDamage(self,amount):
         self.health = self.health - amount
-        print(self.health)
+
+    def equip(self,weapon):
+        self.equippedWeapon = weapon
+
 
 
 

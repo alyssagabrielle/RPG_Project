@@ -22,7 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="character.py" />
-    <Compile Include="weapon.py">
+    <Compile Include="combat.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="interface.py">
